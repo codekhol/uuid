@@ -11,21 +11,24 @@ import (
 
 func main() {
 	var (
-		count int
-		err   error
+		qty int
+		err error
 	)
 
 	switch len(os.Args) {
 	case 1:
-		count = 1
+		qty = 1
 	case 2:
-		count, err = strconv.Atoi(os.Args[1])
+		qty, err = strconv.Atoi(os.Args[1])
 		if err != nil {
-			logrus.Fatalf("invalid count '%s'", os.Args[1])
+			logrus.Fatalf("invalid qty '%s'", os.Args[1])
 		}
+	default:
+		logrus.Infof("usage: uuid [qty]")
+		return
 	}
 
-	for i := 0; i < count; i++ {
+	for i := 0; i < qty; i++ {
 		fmt.Printf("%s\n", uuid.NewV4())
 	}
 }
