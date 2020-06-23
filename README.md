@@ -1,5 +1,5 @@
 # uuid
-Fairly sophisticated UUID/GUID command line tool written in Go.
+Fairly sophisticated UUID/GUID generator, a command line utility written in Go.
 ## Install
 ```
     make install
